@@ -9,6 +9,9 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
 import { LandingPageComponent } from './home/landing-page/landing-page.component';
 import { PageNotFoundComponent } from './home/404/page-not-found.component';
 
+// Ngrx
+import { RootStoreModule } from './store/root-store.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,8 @@ import { PageNotFoundComponent } from './home/404/page-not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RootStoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

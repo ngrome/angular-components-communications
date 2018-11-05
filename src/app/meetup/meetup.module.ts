@@ -8,11 +8,13 @@ import { MeetupListComponent } from './components/meetup-list/meetup-list.compon
 import { MeetupDashboardComponent } from './containers/meetup-dashboard/meetup-dashboard.component';
 import { MeetupDetailsComponent } from './components/meetup-detail/meetup-detail.component';
 import { MeetupListItemComponent } from './components/meetup-list-item/meetup-list-item.component';
+import { MeetupStoreModule } from './store/meetup-store.module';
 
 @NgModule({
   imports: [
     SharedModule,
-    MeetupRoutingModule
+    MeetupRoutingModule,
+    MeetupStoreModule
   ],
   declarations: [
     MeetupDashboardComponent,

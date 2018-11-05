@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from './store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  appState$: Observable<AppState>;
+
+  constructor(public store: Store<AppState>) {
+    this.appState$ = this.store;
+  }
 }
