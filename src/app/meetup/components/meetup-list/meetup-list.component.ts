@@ -1,12 +1,13 @@
 import { MeetupListItemComponent } from './../meetup-list-item/meetup-list-item.component';
-import { Component, OnInit, Input, ViewChildren } from '@angular/core';
+import { Component, OnInit, Input, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
 import { Meetup } from '../../models/meetup';
 import { MeetupService } from '../../services/meetup.service';
 
 @Component({
   selector: 'ngrome-meetup-list',
   templateUrl: './meetup-list.component.html',
-  styleUrls: ['./meetup-list.component.css']
+  styleUrls: ['./meetup-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MeetupListComponent implements OnInit {
 
