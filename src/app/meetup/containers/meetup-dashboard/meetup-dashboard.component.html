@@ -1,0 +1,21 @@
+<h2>All #Meetup</h2>
+<h6>Total Meetup: </h6>
+<hr>
+<div class="container">
+  <div class="row">
+
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+      <strong>Houston we got a prolem!</strong> It's happened right now: .
+    </div>
+
+    <div class="col-md-4">
+      <ngrome-meetup-list></ngrome-meetup-list>
+    </div>
+
+    <div class="col-md-8">
+      <ngrome-meetup-detail></ngrome-meetup-detail>
+    </div>
+
+  </div>
+
+</div>
