@@ -7,6 +7,7 @@ import { MeetupService } from './services/meetup.service';
 import { MeetupListComponent } from './components/meetup-list/meetup-list.component';
 import { MeetupDashboardComponent } from './containers/meetup-dashboard/meetup-dashboard.component';
 import { MeetupDetailsComponent } from './components/meetup-detail/meetup-detail.component';
+import { MeetupListItemComponent } from './components/meetup-list-item/meetup-list-item.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { MeetupDetailsComponent } from './components/meetup-detail/meetup-detail
   declarations: [
     MeetupDashboardComponent,
     MeetupListComponent,
-    MeetupDetailsComponent
+    MeetupDetailsComponent,
+    MeetupListItemComponent
   ],
   providers: [MeetupService],
   exports: []

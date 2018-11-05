@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { MeetupListItemComponent } from './../meetup-list-item/meetup-list-item.component';
+import { Component, OnInit, Input, ViewChildren } from '@angular/core';
+import { Meetup } from '../../models/meetup';
+import { MeetupService } from '../../services/meetup.service';
 
 @Component({
   selector: 'ngrome-meetup-list',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeetupListComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  meetups: Meetup[];
+  @ViewChildren(MeetupListItemComponent) children: MeetupListItemComponent[];
+
+  constructor(private meetupService: MeetupService) { }
 
   ngOnInit() {
+  }
+
+  handleSelection(meetup) {
+    this.meetupService.changeSelectedMeetup(meetup);
+    this.children.map(child => child.idActive = meetup.id);
   }
 
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MeetupService } from '../../services/meetup.service';
+import { Meetup } from '../../models/meetup';
+
 @Component({
   selector: 'ngrome-meetup-detail',
   templateUrl: './meetup-detail.component.html',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeetupDetailsComponent implements OnInit {
 
-  constructor() { }
+  meetup: Meetup;
+  constructor(public meetupService: MeetupService) { }
 
   ngOnInit() {
+    this.meetupService.selectedMeetupChanges$.subscribe(
+      meetup => this.meetup = meetup
+    );
   }
 
 }

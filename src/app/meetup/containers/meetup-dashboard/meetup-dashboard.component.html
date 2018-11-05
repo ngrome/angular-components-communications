@@ -1,7 +1,11 @@
 <h2>All #Meetup</h2>
-<h6>Total Meetup: </h6>
+<h6>Total Meetup: {{meetups?.length}}</h6>
+<div class='row'>
+    <ngrome-filter (valueChange)='onValueChange($event)'></ngrome-filter>
+  </div>
 <hr>
 <div class="container">
+
   <div class="row">
 
     <div class="alert alert-danger" role="alert" *ngIf="error">
@@ -9,7 +13,7 @@
     </div>
 
     <div class="col-md-4">
-      <ngrome-meetup-list></ngrome-meetup-list>
+      <ngrome-meetup-list [meetups]='filteredMeetups'></ngrome-meetup-list>
     </div>
 
     <div class="col-md-8">

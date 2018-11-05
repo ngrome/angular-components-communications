@@ -1,1 +1,9 @@
-<h3>Meetup List</h3>
+<div class="container">
+  <table class="table">
+      <tbody>
+      <tr *ngFor="let meetup of meetups" >
+        <ngrome-meetup-list-item [meetup]=meetup (click)='handleSelection(meetup)'></ngrome-meetup-list-item>
+      </tr>
+      </tbody>
+  </table>
+</div>

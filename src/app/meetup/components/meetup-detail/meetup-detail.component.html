@@ -1,1 +1,14 @@
-<h3>Meetup Detail</h3>
+<div class="card" *ngIf='meetup'>
+  <h5 class="card-header">Meetup Highlighted</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{meetup.name}}</h5>
+    <img [src]=meetup.logo_url alt='logo meetup'>
+    <p class="card-text">Descrione</p>
+
+    <a href="{{meetup.url}}" target="_blank" class="btn btn-primary">Take your spot!</a>
+  </div>
+</div>
+
+<div class="alert alert-success" *ngIf='!meetup' role="alert">
+    <strong>Well done!</strong> You need to select a Meetup on the list.
+  </div>
